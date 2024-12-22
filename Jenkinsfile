@@ -3,7 +3,9 @@ pipeline {
   stages {
     stage("Pull the code from git")
     {
-      checkout scm
+      steps {
+        checkout scm  
+      }
     }
   }
 }
