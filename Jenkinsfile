@@ -1,5 +1,8 @@
 pipeline {
   agent any
+  tools {
+    nodejs "mynodejs"
+  }
   stages {
     stage("Pull the code from git")
     {
