@@ -2,7 +2,7 @@ pipeline {
     agent any
     tools {
         nodejs 'mynode'
-        docker 'docker'
+        dockerTool 'docker'
     }
     stages {
         stage("Checkout the Code") {
