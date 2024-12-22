@@ -20,6 +20,7 @@ pipeline {
     {
       steps {
         sh 'docker build -t test-nodeapp:1.0 .'
+      }
     }
   }
 }
