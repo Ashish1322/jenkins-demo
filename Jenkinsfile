@@ -18,6 +18,7 @@ pipeline {
         stage("Build Docker Image") {
             steps {
                 sh 'pwd'
+                sh 'whoami'
                 sh 'docker --version'
                 sh 'docker build -t test-nodeapp:1.0 .'
             }
