@@ -1,5 +1,8 @@
 pipeline {
   agent any
+  tools {
+        nodejs 'mynode'
+  }
   stages {
     stage("checkout the code")
     {
