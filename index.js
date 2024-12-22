@@ -1,7 +1,7 @@
 
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = 8001;
 
 app.get('/', (req, res) => {
     res.send('Hello, CI/CD with Jenkins!');
