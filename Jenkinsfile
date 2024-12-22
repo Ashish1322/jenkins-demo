@@ -1,27 +1,24 @@
 pipeline {
-  agent any
-  tools {
-        nodejs 'mynode',
+    agent any
+    tools {
+        nodejs 'mynode'
         docker 'docker'
-  }
-  stages {
-    stage("checkout the code")
-    {
-      steps {
-        checkout scm
-      }
     }
-    stage("build the code")
-    {
-      steps {
-        sh 'npm install'
-      }
+    stages {
+        stage("Checkout the Code") {
+            steps {
+                checkout scm
+            }
+        }
+        stage("Install Dependencies") {
+            steps {
+                sh 'npm install'
+            }
+        }
+        stage("Build Docker Image") {
+            steps {
+                sh 'docker build -t test-nodeapp:1.0 .'
+            }
+        }
     }
-    stage("build docker image")
-    {
-      steps {
-        sh 'docker build -t test-nodeapp:1.0 .'
-      }
-    }
-  }
 }
