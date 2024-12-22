@@ -16,5 +16,13 @@ pipeline {
         sh "npm install"
       }
     }
+    stage("Build the docker image")
+    {
+      steps {
+        sh "pwd"
+        sh "whoami"
+        sh "docker build -t my-node:1.0 ."
+      }
+    }
   }
 }
