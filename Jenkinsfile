@@ -16,5 +16,10 @@ pipeline {
         sh 'npm install'
       }
     }
+    stage("build docker image")
+    {
+      steps {
+        sh 'docker build -t test-nodeapp:1.0 .'
+    }
   }
 }
